@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monaco Editor | Big O Analysis</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1>
+      <img src="/logo.svg">
+      <br>
+      <a href="https://github.com/henryhale/worstcase" target="_blank">worstcase</a>
+      +
+      <a href="https://microsoft.github.io/monaco-editor" target="_blank">monaco editor</a>
+      <br>
+      automated big o complexity analysis for javascript
+    </h1>
+    <div class="controls">
+      <button id="toggle-btn">Toggle Analysis</button>
+      <span class="info">Worstcase decorations show for pre-selected blocks</span>
+    </div>
+    <div id="editor-container"></div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
