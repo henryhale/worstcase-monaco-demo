@@ -1,5 +1,4 @@
-import  type { editor } from "monaco-editor"
-import { Range } from './monaco'
+import { editor, Range } from "monaco-editor"
 import { analyzeComplexity } from "worstcase";
 
 /**
