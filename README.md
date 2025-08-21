@@ -10,7 +10,7 @@ automated big o complexity analysis for javascript
 
 ## Overview
 
-This repository contains source code for a demo illustrating the IDE integration of [worstcase](https://github.com/henryhale/worstcase) in [monaco editor]().
+This repository contains source code for a demo showcasing [worstcase](https://github.com/henryhale/worstcase) IDE integration with [monaco editor](https://microsoft.github.io/monaco-editor). 
 
 ## Live demo
 
