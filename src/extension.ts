@@ -1,5 +1,5 @@
 import { editor, Range } from "monaco-editor"
-import { analyzeComplexity } from "worstcase";
+import { analyzeComplexity, type WCAnalysis } from "worstcase";
 
 /**
  * worstcase
@@ -35,8 +35,15 @@ export class WorstcaseExtension {
 
         const decorations: editor.IModelDeltaDecoration[] = []
 
-        // analyze current javascript code
-        const analysis = analyzeComplexity(this.editor.getValue())
+        let analysis: WCAnalysis
+        try {
+            // analyze current javascript code
+            analysis = analyzeComplexity(this.editor.getValue(), { clean: true })
+        } catch (error) {
+            console.debug(error)
+            // no decorations
+            return []
+        }
 
         // create decorations for analyzed blocks
         for (const result of analysis.results) {
