@@ -4,9 +4,11 @@ import snippets from "./snippets"
 // Initialize Monaco Editor
 export function initEditor(monaco: any): void {
   const editorContainer = document.getElementById('editor-container')
-  const toggleButton = document.getElementById('toggle-btn') as HTMLButtonElement
+  const analysisButton = document.getElementById('analysis-btn') as HTMLButtonElement
+  const cleanOutput = document.getElementById('clean-output') as HTMLInputElement
 
-  if (!editorContainer || !toggleButton) {
+
+  if (!editorContainer || !analysisButton || !cleanOutput) {
     console.error('Required DOM elements not found')
     return
   }
@@ -30,17 +32,22 @@ export function initEditor(monaco: any): void {
   // Initialize extension
   const worstcaseExtension = new WorstcaseExtension(codeEditor)
 
-  // Setup toggle button
-  toggleButton.addEventListener('click', () => {
+  // Setup analysis toggle button
+  analysisButton.addEventListener('click', () => {
     worstcaseExtension.toggle()
 
     if (worstcaseExtension.isEnabled()) {
-      toggleButton.textContent = 'Hide Analysis'
-      toggleButton.classList.add('disabled')
+      analysisButton.textContent = 'Hide Analysis'
+      analysisButton.classList.add('disabled')
     } else {
-      toggleButton.textContent = 'Show Analysis'
-      toggleButton.classList.remove('disabled')
+      analysisButton.textContent = 'Show Analysis'
+      analysisButton.classList.remove('disabled')
     }
+  })
+
+  // Setup clean output checkbox
+  cleanOutput.addEventListener('change', () => {
+  	worstcaseExtension.toggleOutput()
   })
 
   // Add context menu option
@@ -49,7 +56,7 @@ export function initEditor(monaco: any): void {
     label: 'Toggle Worstcase Analysis',
     contextMenuGroupId: '1_modification',
     run: () => {
-      toggleButton.click()
+      analysisButton.click()
     }
   })
 

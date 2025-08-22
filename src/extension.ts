@@ -11,6 +11,7 @@ export class WorstcaseExtension {
     private currentDecorations!: editor.IEditorDecorationsCollection
     private enabled: boolean = true
     private debouncedID: number | undefined
+    private cleanOutput: boolean = true
 
     constructor(codeEditor: editor.IStandaloneCodeEditor) {
         this.editor = codeEditor
@@ -38,7 +39,7 @@ export class WorstcaseExtension {
         let analysis: WCAnalysis
         try {
             // analyze current javascript code
-            analysis = analyzeComplexity(this.editor.getValue(), { clean: true })
+            analysis = analyzeComplexity(this.editor.getValue(), { clean: this.cleanOutput })
         } catch (error) {
             console.debug(error)
             // no decorations
@@ -99,5 +100,10 @@ export class WorstcaseExtension {
 
     public isEnabled(): boolean {
         return this.enabled
+    }
+
+    public toggleOutput(): void {
+    	this.cleanOutput = !this.cleanOutput
+    	this.updateDecorations()
     }
 }

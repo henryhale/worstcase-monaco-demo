@@ -54,7 +54,8 @@ h1 a {
     border-radius: 6px;
 }
 
-#toggle-btn {
+label,
+#analysis-btn {
     background: #998201;
     color: white;
     border: none;
@@ -65,17 +66,19 @@ h1 a {
     transition: background-color 0.2s;
 }
 
-#toggle-btn:hover {
+label:hover,
+#analysis-btn:hover {
     background: #ac9201;
 }
 
-#toggle-btn.disabled {
+#analysis-btn.disabled {
     background: #666;
 }
 
 .info {
     font-size: 14px;
     color: #ccc;
+    flex-grow: 1;
 }
 
 #editor-container {
