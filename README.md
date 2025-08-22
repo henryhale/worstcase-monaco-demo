@@ -6,6 +6,7 @@
 <a href="https://microsoft.github.io/monaco-editor" target="_blank">monaco editor</a>
 <br>
 automated big o complexity analysis for javascript
+<img src="./public/screenshot.png">
 </div>
 
 ## Overview
