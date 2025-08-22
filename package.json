@@ -16,6 +16,6 @@
   "dependencies": {
     "acorn": "^8.15.0",
     "monaco-editor": "^0.52.2",
-    "worstcase": "^1.0.0"
+    "worstcase": "^1.1.2"
   }
 }

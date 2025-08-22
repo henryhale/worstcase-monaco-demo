@@ -15,8 +15,8 @@ importers:
         specifier: ^0.52.2
         version: 0.52.2
       worstcase:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.2
+        version: 1.1.2
     devDependencies:
       '@monaco-editor/loader':
         specifier: ^1.5.0
@@ -396,8 +396,8 @@ packages:
       yaml:
         optional: true
 
-  worstcase@1.0.0:
-    resolution: {integrity: sha512-W8SKDzrXOJV8t16wEJzbg8wWg8zffBrJvd3+xvhooQ5iFXhHfaWwxUt353Rafgbt0I0yJvV28K/L8nYDV7EPWA==}
+  worstcase@1.1.2:
+    resolution: {integrity: sha512-22jKJ1TXSQI+ci3Kk842WxIYykVuqKh2Dwo8aEsPofDsJxK6Z5UrLaoDRn92EEUh1nEbQXMnYRIZSNbVnxJa7g==}
 
 snapshots:
 
@@ -645,6 +645,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  worstcase@1.0.0:
+  worstcase@1.1.2:
     dependencies:
       acorn: 8.15.0
